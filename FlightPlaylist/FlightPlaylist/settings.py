@@ -30,7 +30,9 @@ ALLOWED_HOSTS = []
 
 SOCIALACCOUNT_ADAPTER = 'allauth.socialaccount.adapter.DefaultSocialAccountAdapter'
 
-
+SPOTIPY_CLIENT_ID = config('SPOTIFY_CLIENT_ID')
+SPOTIPY_CLIENT_SECRET = config('SPOTIFY_SECRET')
+SPOTIPY_REDIRECT_URI = 'http://localhost:8000/accounts/login/spotify/callback'
 
 # Application definition
 
@@ -38,8 +40,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount', 
-    'django.contrib.sites', 
-    'allauth.socialaccount.providers.google',
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,27 +48,31 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'FlightPlaylist',
-    'django_extensions'
+    'allauth.socialaccount.providers.spotify'
 ]
 
 SITE_ID = 1
 
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
+SOCIALACCOUNT_PROVIDERS: {
+    'spotify': {
         'SCOPE': [
-            'profile',
-            'email',
+            'user-read-email',
+            'user-read-private',
+            'playlist-modify-public',
+            'playlist-modify-private',
+            'playlist-read-private',
+            'playlist-read-collaborative',
         ],
         'AUTH_PARAMS': {
-            'access_type': 'online',
+            'response_type': 'code',
         },
-        'OAUTH_PKCE_ENABLED': True,
+        'METHOD': 'allauth',
         'APP': {
-            'client_id': config('CLIENT_ID'),
-            'secret': config('GOOGLE_SECRET'),
-            'key': ''
+            'client_id': config('SPOTIFY_CLIENT_ID'),
+            'secret': config('SPOTIFY_SECRET'),
+            'key': '',
+            'redirect_uri': 'http://localhost:8000/accounts/login/spotify/callback'
         }
-    
     }
 }
 
