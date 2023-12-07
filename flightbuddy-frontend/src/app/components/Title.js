@@ -3,6 +3,6 @@ const Title = () => {
         <div className='title'>
             <h1>FlightBuddy</h1>
         </div>
-    );
+    )
 }
-export default Title;
+export default Title

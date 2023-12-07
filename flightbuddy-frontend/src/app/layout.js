@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 
 import Header from './components/Header'
+import { useSession } from 'next-auth/react'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -12,6 +13,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const { data: session, status } = useSession()
   return (
     <html lang="en">
       <body className={inter.className}>
