@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import Title from "./Title";
+import Navbar from "./Navbar"
+import Title from "./Title"
 
 const Header = () => {
     return (
@@ -7,7 +7,7 @@ const Header = () => {
             <Title />
             <Navbar />
         </div>
-    );
+    )
 }
 
-export default Header;
+export default Header

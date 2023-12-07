@@ -42,3 +42,66 @@ body {
 .link:hover {
   color: #0b7345;
 }
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+}
+
+.flight-form {
+  display: flex;
+  flex-direction: column;
+  color: #45aeac;
+  align-items: center;
+  font-size: 24px;
+  border-style: solid;
+  border-color: #10a261;
+  border-width: 2px;
+  padding-top: 0;
+  padding-bottom: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.generate-button {
+  background-color: #45aeac;
+  width: 50%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 10%;
+}
+
+.generate-button:hover {
+  background-color: #0b7345;
+}
+
+.flight-input {
+  height: 20px;
+  width: 30%;
+  font-size: 18px;
+  border-width: 3px;
+  border-color: #10a261;
+  border-style: solid;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+}
+
+.playlists-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-width: 3px;
+  justify-content: center;
+  align-items: center;
+  border-color: #10a261;
+  border-style: solid;
+  color: #45aeac;
+}

@@ -1,10 +1,11 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import PlaylistForm from "./components/PlaylistForm"
 
-export default function Home() {
+const Home = () => {
   return (
-    <main>
-      
+    <main className='home-container'>
+      <PlaylistForm />
     </main>
   )
 }
+
+export default Home
