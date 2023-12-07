@@ -2,3 +2,4 @@ venv/
 .DS_Store
 .env
 FlightPlaylist\FlightPlaylist\migrations\__pycache__
+FlightPlaylist\db.sqlite3
