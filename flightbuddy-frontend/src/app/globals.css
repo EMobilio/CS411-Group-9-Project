@@ -105,3 +105,20 @@ body {
   border-style: solid;
   color: #45aeac;
 }
+
+.login {
+  position: absolute;
+  color: #45aeac;
+  font-size: 24px;
+  right: 3%;
+  text-decoration: none;
+}
+
+.login:hover {
+  color: #0b7345;
+  cursor: pointer;
+}
+
+h3 {
+  color: red;
+}

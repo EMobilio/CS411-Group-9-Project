@@ -1,8 +1,8 @@
 import requests
 
 def get_flight_info(flight_code):
-    access_key = '45113167e44472815d4c34fe415a53ba' 
-    url = f"https://api.aviationstack.com/v1/flights"
+    access_key = "6a8dc701560359a02bcf9405169685d5"
+    url = f"http://api.aviationstack.com/v1/flights"
     params = {
         'access_key': access_key,
         'flight_icao': flight_code
@@ -13,6 +13,7 @@ def get_flight_info(flight_code):
 
         if response.status_code == 200:
             data = response.json()
+            print(data)
             if data['pagination']['total'] > 0:
                 flight = data['data'][0]
                 arrival = flight['arrival']
