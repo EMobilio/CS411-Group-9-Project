@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ucakProje.iml" filepath="$PROJECT_DIR$/.idea/ucakProje.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/flightApi.iml" filepath="$PROJECT_DIR$/.idea/flightApi.iml" />
     </modules>
   </component>
 </project>
