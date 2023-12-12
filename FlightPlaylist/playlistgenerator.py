@@ -2,7 +2,6 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import requests
 import pandas as pd
-import csv
 from countrycodes import country_dict
 
 # Set your Spotify API credentials ()
