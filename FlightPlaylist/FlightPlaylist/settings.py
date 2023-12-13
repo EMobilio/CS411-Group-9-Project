@@ -33,8 +33,10 @@ SOCIALACCOUNT_ADAPTER = 'allauth.socialaccount.adapter.DefaultSocialAccountAdapt
 
 SPOTIPY_CLIENT_ID = config('SPOTIFY_CLIENT_ID')
 SPOTIPY_CLIENT_SECRET = config('SPOTIFY_SECRET')
-SPOTIPY_REDIRECT_URI = 'http://localhost:8000/accounts/login/spotify/callback'
-FLIGHT_ACCESS_KEY = config('FLIGHT_ACCESS_KEY')
+SPOTIPY_REDIRECT_URI = 'http://localhost:3000/api/auth/callback/spotify'
+AIRPORT_KEY = config('AIRPORT_KEY')
+AIRPORT_HOST = config('AIRPORT_HOST')
+
 
 # Application definition
 
@@ -75,7 +77,7 @@ SOCIALACCOUNT_PROVIDERS: {
             'client_id': config('SPOTIFY_CLIENT_ID'),
             'secret': config('SPOTIFY_SECRET'),
             'key': '',
-            'redirect_uri': 'http://localhost:8000/accounts/login/spotify/callback'
+            'redirect_uri': 'http://localhost:3000/api/auth/callback/spotify'
         }
     }
 }
