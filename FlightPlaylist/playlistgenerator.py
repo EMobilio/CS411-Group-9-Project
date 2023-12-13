@@ -2,11 +2,13 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import requests
 import pandas as pd
+from countrycodes import country_dict
 
 # Set your Spotify API credentials ()
-CLIENT_ID =""#client id
-CLIENT_SECRET = ""#client secret
-REDIRECT_URI = "" #set to flight buddy website
+CLIENT_ID =  #client id
+CLIENT_SECRET =  #client secret
+REDIRECT_URI =  #set to flight buddy website
+USERNAME = #client username
 
 #inputs: user_country: the name of the country they are traveling to
 #       sp: spotipy instance
