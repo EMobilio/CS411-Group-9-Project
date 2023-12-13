@@ -23,7 +23,16 @@ const PlaylistForm = () => {
                     if (res.data["error"] === "Flight not found") {
                         setIsValidFlightNumber(false)
                     } else {
-                        router.push('/profile')
+                        axios.post('http://127.0.0.1:8000/api/create_playlist/', null, {
+                            params: {
+                                token: '',
+                                country_code: res.data["country"],
+                            }
+                        })
+                        .then((res) => {
+                            console.log(res.data)
+                            router.push('/profile')
+                        })
                     }
                 }
                 
