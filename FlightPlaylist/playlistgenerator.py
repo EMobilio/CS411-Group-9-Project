@@ -1,14 +1,10 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import requests
-import pandas as pd
+from decouple import config
 from countrycodes import country_dict
+import os
 
-# Set your Spotify API credentials ()
-CLIENT_ID =  #client id
-CLIENT_SECRET =  #client secret
-REDIRECT_URI =  #set to flight buddy website
-USERNAME = #client username
 
 #inputs: user_country: the name of the country they are traveling to
 #       sp: spotipy instance
@@ -55,9 +51,14 @@ def get_top_songs(token, country_code): #scrapes spotify regional chart and retu
     return chart
 
 def spotipyInit(): #EDIT ONCE WE CONNECT TO FRONTEND
+    # Set your Spotify API credentials ()
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    id = config('CLIENT_ID') #client id
+    secret = config('CLIENT_SECRET') #client secret
+    uri = config('REDIRECT_URI') #set to flight buddy website
     # Set up Spotify API authentication
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
-                                                client_secret=CLIENT_SECRET,
-                                                redirect_uri=REDIRECT_URI,
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=id,
+                                                client_secret=secret,
+                                                redirect_uri=uri,
                                                 scope='playlist-modify-private'))
     return sp
