@@ -17,9 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import spotify_auth
+from .views import get_flight_info
+from .views import create_playlist
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('social/', include('social_django.urls')),
-    path('spotify-auth/', spotify_auth, name='spotify-auth')
+    path('spotify-auth/', spotify_auth, name='spotify-auth'),
+    path('api/get_flight_info/', get_flight_info, name='get_flight_info'),
+    path('api/create_playlist/', create_playlist, name='create_playlist')
 ]
